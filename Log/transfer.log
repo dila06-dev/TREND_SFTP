@@ -76,3 +76,17 @@
 2026-09-03 12:35:47.015 [INFO] [PAGERO] Renamed processed local source file '2026600173.xml' to '2026600173.done'.
 2026-09-03 12:35:47.047 [INFO] [PAGERO] SFTP session 10 closed.
 2026-09-03 12:35:47.078 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 13:05:36.778 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 13:05:36.793 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 13:05:37.748 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-03 13:05:37.779 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 14:05:36.628 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 14:05:36.659 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 14:05:36.924 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-03 14:05:36.924 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 14:39:42.542 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 14:39:42.557 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 14:39:43.791 [INFO] [PAGERO] Uploaded '2026600210.xml' as 'DE13-Invoice-2026600210-20260903120126645.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-03 14:39:43.979 [INFO] [PAGERO] Renamed processed local source file '2026600210.xml' to '2026600210.done'.
+2026-09-03 14:39:44.010 [INFO] [PAGERO] SFTP session 10 closed.
+2026-09-03 14:39:44.026 [INFO] [-] Run finished. ExitCode=0
