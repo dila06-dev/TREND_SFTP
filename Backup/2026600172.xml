@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><rsm:CrossIndustryInvoice xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100" xmlns:a="urn:un:unece:uncefact:data:standard:QualifiedDataType:100" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:trd="http://trendswm.de/trd" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:100" xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100">
+    <rsm:ExchangedDocumentContext>
+        <ram:GuidelineSpecifiedDocumentContextParameter>
+            <ram:ID>urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended</ram:ID>
+        </ram:GuidelineSpecifiedDocumentContextParameter>
+    </rsm:ExchangedDocumentContext>
+    <rsm:ExchangedDocument>
+        <ram:ID>2026600172</ram:ID>
+        <ram:Name>FACTUUR</ram:Name>
+        <ram:TypeCode>380</ram:TypeCode>
+        <ram:IssueDateTime>
+            <udt:DateTimeString format="102">20260707</udt:DateTimeString>
+        </ram:IssueDateTime>
+    </rsm:ExchangedDocument>
+    <rsm:SupplyChainTradeTransaction>
+        <ram:IncludedSupplyChainTradeLineItem>
+            <ram:AssociatedDocumentLineDocument>
+                <ram:LineID>  10</ram:LineID>
+                <ram:IncludedNote>
+                    <ram:Content>Betreft herstelling kluis.</ram:Content>
+                </ram:IncludedNote>
+                <ram:IncludedNote>
+                    <ram:Content>De steen werd vervangen.</ram:Content>
+                </ram:IncludedNote>
+            </ram:AssociatedDocumentLineDocument>
+            <ram:SpecifiedTradeProduct>
+                <ram:SellerAssignedID>999REP</ram:SellerAssignedID>
+                <ram:Name>DE Sonderartikel ReparaturNL Reparatiekosten</ram:Name>
+            </ram:SpecifiedTradeProduct>
+            <ram:SpecifiedLineTradeAgreement>
+                <ram:NetPriceProductTradePrice>
+                    <ram:ChargeAmount>0</ram:ChargeAmount>
+                    <ram:BasisQuantity unitCode="C62">1</ram:BasisQuantity>
+                </ram:NetPriceProductTradePrice>
+            </ram:SpecifiedLineTradeAgreement>
+            <ram:SpecifiedLineTradeDelivery>
+                <ram:BilledQuantity unitCode="C62">1</ram:BilledQuantity>
+            </ram:SpecifiedLineTradeDelivery>
+            <ram:SpecifiedLineTradeSettlement>
+                <ram:ApplicableTradeTax>
+                    <ram:TypeCode>VAT</ram:TypeCode>
+                    <ram:ExemptionReason>0 % EG-levering</ram:ExemptionReason>
+                    <ram:CategoryCode>G</ram:CategoryCode>
+                    <ram:RateApplicablePercent>0</ram:RateApplicablePercent>
+                </ram:ApplicableTradeTax>
+                <ram:SpecifiedTradeSettlementLineMonetarySummation>
+                    <ram:LineTotalAmount>187.09</ram:LineTotalAmount>
+                </ram:SpecifiedTradeSettlementLineMonetarySummation>
+            </ram:SpecifiedLineTradeSettlement>
+        </ram:IncludedSupplyChainTradeLineItem>
+        <ram:ApplicableHeaderTradeAgreement>
+            <ram:SellerTradeParty>
+                <ram:ID/>
+                <ram:Name>Dometic Benelux B.V.</ram:Name>
+                <ram:DefinedTradeContact>
+                    <ram:TelephoneUniversalCommunication>
+                        <ram:CompleteNumber/>
+                    </ram:TelephoneUniversalCommunication>
+                </ram:DefinedTradeContact>
+                <ram:PostalTradeAddress>
+                    <ram:PostcodeCode>9050</ram:PostcodeCode>
+                    <ram:LineOne>Zuidepoort,Gaston Crommenlaan8</ram:LineOne>
+                    <ram:CityName>Gent</ram:CityName>
+                    <ram:CountryID>DE</ram:CountryID>
+                </ram:PostalTradeAddress>
+                <ram:SpecifiedTaxRegistration>
+                    <ram:ID schemeID="VA">DE124393501</ram:ID>
+                </ram:SpecifiedTaxRegistration>
+            </ram:SellerTradeParty>
+            <ram:BuyerTradeParty>
+                <ram:ID>407196</ram:ID>
+                <ram:GlobalID schemeID="0088"/>
+                <ram:Name>OCMW Gent</ram:Name>
+                <ram:PostalTradeAddress>
+                    <ram:PostcodeCode>9000</ram:PostcodeCode>
+                    <ram:LineOne>Onderbergen 86</ram:LineOne>
+                    <ram:CityName>Gent</ram:CityName>
+                    <ram:CountryID>BE</ram:CountryID>
+                </ram:PostalTradeAddress>
+                <ram:SpecifiedTaxRegistration>
+                    <ram:ID schemeID="VA">BE0212214125</ram:ID>
+                </ram:SpecifiedTaxRegistration>
+            </ram:BuyerTradeParty>
+            <ram:BuyerOrderReferencedDocument>
+                <ram:IssuerAssignedID>Uw ref: 6300048257</ram:IssuerAssignedID>
+            </ram:BuyerOrderReferencedDocument>
+        </ram:ApplicableHeaderTradeAgreement>
+        <ram:ApplicableHeaderTradeDelivery>
+            <ram:ShipToTradeParty>
+                <ram:GlobalID schemeID="0088"/>
+                <ram:Name>WZC Zuiderlicht - Onthaal </ram:Name>
+                <ram:PostalTradeAddress>
+                    <ram:PostcodeCode>9030</ram:PostcodeCode>
+                    <ram:LineOne>Zuidbroek 8</ram:LineOne>
+                    <ram:CityName>MARIAKERKE</ram:CityName>
+                    <ram:CountryID>BE</ram:CountryID>
+                </ram:PostalTradeAddress>
+            </ram:ShipToTradeParty>
+            <ram:ActualDeliverySupplyChainEvent>
+                <ram:OccurrenceDateTime>
+                    <udt:DateTimeString format="102"> 20260707</udt:DateTimeString>
+                </ram:OccurrenceDateTime>
+            </ram:ActualDeliverySupplyChainEvent>
+            <ram:DeliveryNoteReferencedDocument>
+                <ram:IssuerAssignedID>2026/464373</ram:IssuerAssignedID>
+            </ram:DeliveryNoteReferencedDocument>
+        </ram:ApplicableHeaderTradeDelivery>
+        <ram:ApplicableHeaderTradeSettlement>
+            <ram:InvoiceCurrencyCode>EUR</ram:InvoiceCurrencyCode>
+            <ram:InvoiceeTradeParty>
+                <ram:ID>407196</ram:ID>
+                <ram:GlobalID schemeID="0088"/>
+                <ram:Name>OCMW Gent </ram:Name>
+                <ram:PostalTradeAddress>
+                    <ram:PostcodeCode>9000</ram:PostcodeCode>
+                    <ram:LineOne>Onderbergen 86</ram:LineOne>
+                    <ram:CityName>Gent</ram:CityName>
+                    <ram:CountryID>BE</ram:CountryID>
+                </ram:PostalTradeAddress>
+            </ram:InvoiceeTradeParty>
+            <ram:SpecifiedTradeSettlementPaymentMeans>
+                <ram:TypeCode>58</ram:TypeCode>
+                <ram:Information>FORTIS BANK</ram:Information>
+                <ram:PayeePartyCreditorFinancialAccount>
+                    <ram:IBANID>BE 30 0013 6894 2711</ram:IBANID>
+                    <ram:AccountName>Dometic Benelux B.V.</ram:AccountName>
+                </ram:PayeePartyCreditorFinancialAccount>
+                <ram:PayeeSpecifiedCreditorFinancialInstitution>
+                    <ram:BICID>GEBA BE BB 36</ram:BICID>
+                </ram:PayeeSpecifiedCreditorFinancialInstitution>
+            </ram:SpecifiedTradeSettlementPaymentMeans>
+            <ram:ApplicableTradeTax>
+                <ram:CalculatedAmount>0</ram:CalculatedAmount>
+                <ram:TypeCode>VAT</ram:TypeCode>
+                <ram:ExemptionReason>0 % EG-levering</ram:ExemptionReason>
+                <ram:BasisAmount>187.09</ram:BasisAmount>
+                <ram:CategoryCode>G</ram:CategoryCode>
+                <ram:RateApplicablePercent>0</ram:RateApplicablePercent>
+            </ram:ApplicableTradeTax>
+            <ram:SpecifiedTradePaymentTerms>
+                <ram:Description>30 Dagen netto
+</ram:Description>
+            </ram:SpecifiedTradePaymentTerms>
+            <ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+                <ram:LineTotalAmount>187.09</ram:LineTotalAmount>
+                <ram:ChargeTotalAmount>0</ram:ChargeTotalAmount>
+                <ram:AllowanceTotalAmount>0</ram:AllowanceTotalAmount>
+                <ram:TaxBasisTotalAmount>187.09</ram:TaxBasisTotalAmount>
+                <ram:TaxTotalAmount currencyID="EUR">0.00</ram:TaxTotalAmount>
+                <ram:GrandTotalAmount>187.09</ram:GrandTotalAmount>
+                <ram:DuePayableAmount>187.09</ram:DuePayableAmount>
+            </ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+        </ram:ApplicableHeaderTradeSettlement>
+    </rsm:SupplyChainTradeTransaction>
+</rsm:CrossIndustryInvoice>

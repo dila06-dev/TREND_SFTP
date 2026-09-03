@@ -1,0 +1,78 @@
+﻿2026-09-03 09:19:07.573 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 09:19:07.573 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 09:19:07.641 [ERROR] [PAGERO] Credential file 'D:\TREND_SFTP\secure\trend.sec' cannot be decrypted by the current Windows account: Input string was not in a correct format.
+2026-09-03 09:19:07.667 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 09:22:33.886 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 09:22:33.886 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 09:22:33.902 [ERROR] [PAGERO] Credential file 'D:\TREND_SFTP\secure\trend.sec' cannot be decrypted by the current Windows account: Input string was not in a correct format.
+2026-09-03 09:22:33.917 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 09:23:14.558 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 09:23:14.574 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 09:23:14.589 [ERROR] [PAGERO] Credential file 'D:\TREND_SFTP\secure\trend.sec' cannot be decrypted by the current Windows account: Input string was not in a correct format.
+2026-09-03 09:23:14.605 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 09:27:44.612 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 09:27:44.628 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 09:27:45.887 [INFO] [PAGERO] Uploaded '2026600165.xml' as 'DE13-Invoice-2026600165-20260827074350385.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-03 09:27:46.653 [INFO] [PAGERO] Uploaded '2026600172.xml' as 'DE13-Invoice-2026600172-20260826105158510.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-03 09:27:47.403 [INFO] [PAGERO] Uploaded '2026600173.xml' as 'DE13-Invoice-2026600173-20260826105201396.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-03 09:27:47.449 [INFO] [PAGERO] SFTP session 10 closed.
+2026-09-03 09:27:47.465 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 10:05:36.128 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 10:05:36.144 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 10:05:37.582 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600165-20260827074350385.xml'.
+2026-09-03 10:05:38.083 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600172-20260826105158510.xml'.
+2026-09-03 10:05:38.540 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600173-20260826105201396.xml'.
+2026-09-03 10:05:38.619 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-03 10:05:38.635 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 11:43:35.537 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 11:43:35.553 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 11:43:36.355 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600165-20260827074350385.xml'.
+2026-09-03 11:43:37.240 [INFO] [PAGERO] Uploaded '2026600172.xml' as 'DE13-Invoice-2026600172-20260902135707029.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-03 11:43:37.615 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600173-20260826105201396.xml'.
+2026-09-03 11:43:37.647 [INFO] [PAGERO] SFTP session 10 closed.
+2026-09-03 11:43:37.667 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 11:44:15.272 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 11:44:15.272 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 11:44:16.071 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600165-20260827074350385.xml'.
+2026-09-03 11:44:16.444 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600172-20260902135707029.xml'.
+2026-09-03 11:44:16.857 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600173-20260826105201396.xml'.
+2026-09-03 11:44:16.881 [INFO] [PAGERO] SFTP session 10 closed.
+2026-09-03 11:44:16.897 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 11:45:21.178 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 11:45:21.178 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 11:45:21.991 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600165-20260827074350385.xml'.
+2026-09-03 11:45:22.350 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600172-20260902135707029.xml'.
+2026-09-03 11:45:22.710 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600173-20260826105201396.xml'.
+2026-09-03 11:45:22.741 [INFO] [PAGERO] SFTP session 10 closed.
+2026-09-03 11:45:22.756 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 11:45:49.975 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 11:45:49.975 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 11:45:51.303 [INFO] [PAGERO] Uploaded '2026600165.xml' as 'DE13-Invoice-2026600165-20260827074350385.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-03 11:45:52.053 [INFO] [PAGERO] Uploaded '2026600172.xml' as 'DE13-Invoice-2026600172-20260902135707029.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-03 11:45:52.792 [INFO] [PAGERO] Uploaded '2026600173.xml' as 'DE13-Invoice-2026600173-20260826105201396.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-03 11:45:52.809 [INFO] [PAGERO] SFTP session 10 closed.
+2026-09-03 11:45:52.824 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 11:52:05.148 [INFO] [-] Run started. Profile=HOURLY; Customer=PAGERO; Selected=PAGERO
+2026-09-03 11:52:05.148 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 11:52:06.134 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600165-20260827074350385.xml'.
+2026-09-03 11:52:06.594 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600172-20260902135707029.xml'.
+2026-09-03 11:52:07.086 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600173-20260826105201396.xml'.
+2026-09-03 11:52:07.117 [INFO] [PAGERO] SFTP session 10 closed.
+2026-09-03 11:52:07.133 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 12:05:36.599 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 12:05:36.614 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 12:05:37.913 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600165-20260827074350385.xml'.
+2026-09-03 12:05:38.274 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600172-20260902135707029.xml'.
+2026-09-03 12:05:38.665 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600173-20260826105201396.xml'.
+2026-09-03 12:05:38.712 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-03 12:05:38.744 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 12:35:43.609 [INFO] [-] Run started. Profile=HOURLY; Customer=PAGERO; Selected=PAGERO
+2026-09-03 12:35:43.624 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 12:35:44.390 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600165-20260827074350385.xml'.
+2026-09-03 12:35:44.546 [INFO] [PAGERO] Renamed processed local source file '2026600165.xml' to '2026600165.done'.
+2026-09-03 12:35:45.343 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600172-20260902135707029.xml'.
+2026-09-03 12:35:45.781 [INFO] [PAGERO] Renamed processed local source file '2026600172.xml' to '2026600172.done'.
+2026-09-03 12:35:46.593 [WARN] [PAGERO] Pagero target already exists; upload skipped: 'DE13-Invoice-2026600173-20260826105201396.xml'.
+2026-09-03 12:35:47.015 [INFO] [PAGERO] Renamed processed local source file '2026600173.xml' to '2026600173.done'.
+2026-09-03 12:35:47.047 [INFO] [PAGERO] SFTP session 10 closed.
+2026-09-03 12:35:47.078 [INFO] [-] Run finished. ExitCode=0

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Systemarchitektur des vereinheitlichten TREND-SFTP-Transfers</title>
+  <desc id="desc">Windows Task Scheduler startet MAIN.ps1 stündlich für Pagero oder täglich für drei Standardkunden. Die Main-Datei verwendet zentrale Konfiguration, Logging und Sperre, liest je Kunde eine SMB-Quelle und schreibt in ein eigenes SFTP-Ziel.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#9333ea"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#16a34a"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .bg { fill:#f8fafc; }
+      .title { font:700 34px 'Segoe UI',Arial,sans-serif; fill:#0f172a; }
+      .subtitle { font:400 18px 'Segoe UI',Arial,sans-serif; fill:#475569; }
+      .head { font:700 20px 'Segoe UI',Arial,sans-serif; fill:#0f172a; }
+      .body { font:400 16px 'Segoe UI',Arial,sans-serif; fill:#334155; }
+      .small { font:400 14px 'Segoe UI',Arial,sans-serif; fill:#475569; }
+      .white-head { font:700 21px 'Segoe UI',Arial,sans-serif; fill:#ffffff; }
+      .white-body { font:400 15px 'Segoe UI',Arial,sans-serif; fill:#eff6ff; }
+      .scheduler { fill:#dbeafe; stroke:#2563eb; stroke-width:3; }
+      .main { fill:#1e3a8a; stroke:#1e40af; stroke-width:3; }
+      .config { fill:#fef3c7; stroke:#d97706; stroke-width:3; }
+      .safety { fill:#e2e8f0; stroke:#64748b; stroke-width:3; }
+      .pagero { fill:#f3e8ff; stroke:#9333ea; stroke-width:3; }
+      .standard { fill:#dcfce7; stroke:#16a34a; stroke-width:3; }
+      .source { fill:#cffafe; stroke:#0891b2; stroke-width:3; }
+      .target-purple { fill:#faf5ff; stroke:#9333ea; stroke-width:3; }
+      .target-green { fill:#f0fdf4; stroke:#16a34a; stroke-width:3; }
+      .label-purple { font:700 15px 'Segoe UI',Arial,sans-serif; fill:#6b21a8; }
+      .label-green { font:700 15px 'Segoe UI',Arial,sans-serif; fill:#166534; }
+      .line-blue { fill:none; stroke:#2563eb; stroke-width:4; marker-end:url(#arrow-blue); }
+      .line-purple { fill:none; stroke:#9333ea; stroke-width:4; marker-end:url(#arrow-purple); }
+      .line-green { fill:none; stroke:#16a34a; stroke-width:4; marker-end:url(#arrow-green); }
+      .line-dashed { fill:none; stroke:#64748b; stroke-width:3; stroke-dasharray:10 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1400" height="1000" rx="24"/>
+  <text class="title" x="700" y="52" text-anchor="middle">TREND-SFTP – Systemarchitektur</text>
+  <text class="subtitle" x="700" y="82" text-anchor="middle">Ein Einstiegspunkt · zwei Laufprofile · kundenspezifisch getrennte Transfers</text>
+
+  <rect class="scheduler" filter="url(#shadow)" x="115" y="120" width="500" height="112" rx="18"/>
+  <text class="head" x="365" y="158" text-anchor="middle">Windows Task Scheduler</text>
+  <text class="body" x="365" y="187" text-anchor="middle">HOURLY · stündlich · PAGERO</text>
+  <text class="body" x="365" y="212" text-anchor="middle">-RunProfile HOURLY</text>
+
+  <rect class="scheduler" filter="url(#shadow)" x="785" y="120" width="500" height="112" rx="18"/>
+  <text class="head" x="1035" y="158" text-anchor="middle">Windows Task Scheduler</text>
+  <text class="body" x="1035" y="187" text-anchor="middle">DAILY · täglich · Standardkunden</text>
+  <text class="body" x="1035" y="212" text-anchor="middle">-RunProfile DAILY</text>
+
+  <path class="line-blue" d="M365 232 L365 278 L620 278 L620 307"/>
+  <path class="line-blue" d="M1035 232 L1035 278 L780 278 L780 307"/>
+
+  <rect class="main" filter="url(#shadow)" x="470" y="310" width="460" height="128" rx="20"/>
+  <text class="white-head" x="700" y="351" text-anchor="middle">MAIN.ps1</text>
+  <text class="white-body" x="700" y="382" text-anchor="middle">Konfiguration laden · Kunden wählen · Cleanup</text>
+  <text class="white-body" x="700" y="408" text-anchor="middle">Zusammenfassung · Exitcode 0 / 1 / 2</text>
+
+  <rect class="config" x="65" y="330" width="320" height="92" rx="16"/>
+  <text class="head" x="225" y="366" text-anchor="middle">USER_PARAM.ps1</text>
+  <text class="body" x="225" y="394" text-anchor="middle">Profile · Hosts · Pfade · Mapping</text>
+  <path class="line-dashed" d="M385 376 L470 376"/>
+
+  <rect class="safety" x="1015" y="320" width="320" height="112" rx="16"/>
+  <text class="head" x="1175" y="355" text-anchor="middle">Schutz und Nachweis</text>
+  <text class="body" x="1175" y="383" text-anchor="middle">transfer.lock · transfer.log</text>
+  <text class="body" x="1175" y="407" text-anchor="middle">Credential- und Modulprüfung</text>
+  <path class="line-dashed" d="M930 376 L1015 376"/>
+
+  <path class="line-purple" d="M610 438 L610 500"/>
+  <path class="line-green" d="M790 438 L790 500"/>
+
+  <rect class="pagero" filter="url(#shadow)" x="95" y="505" width="515" height="155" rx="20"/>
+  <text class="head" x="352" y="545" text-anchor="middle">PAGERO · Sonderverarbeitung</text>
+  <text class="body" x="352" y="578" text-anchor="middle">XML SellerTradeParty/Name lesen</text>
+  <text class="body" x="352" y="605" text-anchor="middle">Dometic Benelux B.V. → DE13</text>
+  <text class="body" x="352" y="632" text-anchor="middle">Remote-Umbenennung nach Entity-Schema</text>
+
+  <rect class="standard" filter="url(#shadow)" x="790" y="505" width="515" height="155" rx="20"/>
+  <text class="head" x="1048" y="545" text-anchor="middle">STANDARD · unverändert</text>
+  <text class="body" x="1048" y="578" text-anchor="middle">SCHLANSER · GALAXUS · BRACK</text>
+  <text class="body" x="1048" y="605" text-anchor="middle">CSV-Dateiname bleibt unverändert</text>
+  <text class="body" x="1048" y="632" text-anchor="middle">Eigene Session und eigenes Ziel je Kunde</text>
+
+  <path class="line-purple" d="M352 660 L352 718"/>
+  <path class="line-green" d="M1048 660 L1048 718"/>
+
+  <rect class="source" x="70" y="722" width="565" height="92" rx="16"/>
+  <text class="head" x="352" y="758" text-anchor="middle">SMB-Quelle PAGERO</text>
+  <text class="small" x="352" y="788" text-anchor="middle">\\S105DD7A...\TREND\echt\e-Rechnungen · *.xml</text>
+
+  <rect class="source" x="765" y="722" width="565" height="92" rx="16"/>
+  <text class="head" x="1048" y="758" text-anchor="middle">SMB-Quellen Standardkunden</text>
+  <text class="small" x="1048" y="788" text-anchor="middle">SCHLANSER · GALAXUSI · BRACK · *.csv</text>
+
+  <path class="line-purple" d="M352 814 L352 862"/>
+  <path class="line-green" d="M1048 814 L1048 862"/>
+
+  <rect class="target-purple" x="70" y="866" width="565" height="85" rx="16"/>
+  <text class="head" x="352" y="902" text-anchor="middle">SFTP PAGERO · /in</text>
+  <text class="label-purple" x="352" y="929" text-anchor="middle">DE13-Invoice-Nummer-Timestamp.xml</text>
+
+  <rect class="target-green" x="765" y="866" width="565" height="85" rx="16"/>
+  <text class="head" x="1048" y="902" text-anchor="middle">SFTP Standardziele</text>
+  <text class="label-green" x="1048" y="929" text-anchor="middle">/ · /StockData_EU · /pricelistimport</text>
+
+  <text class="small" x="700" y="982" text-anchor="middle">Jeder Kundenlauf: SMB verbinden → SFTP verarbeiten → Quelle auf .done umbenennen → SFTP und PSDrive schließen</text>
+</svg>
