@@ -38,7 +38,7 @@ Prüfbefehle:
 
 ```powershell
 Get-ScheduledTask |
-    Where-Object TaskName -like 'TREND SFTP*' |
+    Where-Object TaskName -like 'TREND_TO*' |
     ForEach-Object {
         $info = $_ | Get-ScheduledTaskInfo
         [PSCustomObject]@{
