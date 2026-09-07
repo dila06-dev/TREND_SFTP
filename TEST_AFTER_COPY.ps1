@@ -57,11 +57,9 @@ try {
     }
 
     Write-Host 'OK: processed source file renamed to .done; collision protection passed.' -ForegroundColor Green
-    exit 0
 }
 catch {
-    Write-Host "ERROR: local .done behavior test failed: $($_.Exception.Message)" -ForegroundColor Red
-    exit 1
+    throw "Local .done behavior test failed: $($_.Exception.Message)"
 }
 finally {
     if (Test-Path -LiteralPath $testRoot) {

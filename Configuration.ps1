@@ -37,10 +37,20 @@ function Assert-TransferConfiguration {
             'SourceDriveName',
             'NetworkUsername',
             'NetworkCredentialFile',
+            'SourceConnectionRetryCount',
+            'SourceConnectionRetryDelaySeconds',
             'ConnectionTimeoutSeconds',
             'OperationTimeoutSeconds',
             'KeepAliveSeconds'
         )
+
+    if ([int]$Configuration.General.SourceConnectionRetryCount -lt 1) {
+        throw 'General configuration SourceConnectionRetryCount must be at least 1.'
+    }
+
+    if ([int]$Configuration.General.SourceConnectionRetryDelaySeconds -lt 0) {
+        throw 'General configuration SourceConnectionRetryDelaySeconds cannot be negative.'
+    }
 
     $requiredCustomerProperties = @(
         'CustomerId',

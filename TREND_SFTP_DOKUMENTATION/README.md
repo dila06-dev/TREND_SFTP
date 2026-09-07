@@ -1,7 +1,7 @@
 # TREND-SFTP – Dokumentationspaket
 
 **System:** Vereinheitlichter SFTP-Dateitransfer  
-**Stand:** 03.09.2026  
+**Stand:** 07.09.2026  
 **Zielplattform:** Windows PowerShell 5.1  
 **Produktivverzeichnis:** `D:\TREND_SFTP`
 
@@ -87,6 +87,10 @@ Set-Location 'D:\TREND_SFTP'
    vorhandenes Ziel wird als `AlreadyExists` gezählt und nicht erneut hochgeladen.
 6. Nach erfolgreicher Verarbeitung wird die lokale Eingabedatei bei jedem Kunden
    auf `.done` umbenannt. Ein vorhandenes `.done`-Ziel wird nicht überschrieben.
+7. Eine erreichbare Quelle ohne neue `.xml`-/`.csv`-Dateien ist ein normaler
+   Zustand: `NO_FILES`, Exitcode `0`, keine SFTP-Session.
+8. Ein nicht erreichbarer SMB-Quellpfad wird mehrfach versucht und bleibt bei
+   dauerhaftem Ausfall ein Fehler, damit fehlende Rechnungen nicht unbemerkt bleiben.
 
 ## Paketstruktur
 

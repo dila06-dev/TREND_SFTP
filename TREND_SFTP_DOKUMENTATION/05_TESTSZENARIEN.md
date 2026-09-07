@@ -45,12 +45,14 @@ gleichwertig geschützt ist. Für reine XML-Tests werden sie nicht benötigt.
 
 | ID | Szenario | Typ | Erwartung |
 | --- | --- | --- | --- |
-| T01 | Paketprüfung | lokal | Syntax, Konfiguration und `.done`-Verhalten erfolgreich |
+| T01 | Paketprüfung | lokal | Syntax, Konfiguration, `.done` und Quelldateiauswahl erfolgreich |
 | T02 | Kundenliste | lokal | vier konfigurierte Kunden sichtbar |
 | T03 | HOURLY-Validierung | lokal/Credential | PAGERO-Credentials lesbar |
 | T04 | DAILY-Validierung | lokal/Credential | drei Standardkunden-Credentials lesbar |
 | T05 | Kundenfilter überschreibt Profil | lokal | nur gewünschter Kunde ausgewählt |
 | T06 | `.done`-Umbenennung | lokal | Erweiterung ersetzt; vorhandenes Ziel geschützt |
+| T07 | keine aktive Quelldatei | lokal/Integration | `NO_FILES`, kein SFTP, Exitcode 0 |
+| T08 | temporärer SMB-Fehler | Integration | Wiederholungen gemäß Konfiguration |
 | T10 | gültige Pagero-XML | lokal | Seller `Dometic Benelux B.V.`, Entity `DE13` |
 | T11 | unbekannter Verkäufer | negativ/lokal | kontrollierter Mapping-Fehler |
 | T12 | Verkäufername fehlt | negativ/lokal | kontrollierter Pfadfehler |
@@ -83,6 +85,7 @@ Erwartung:
 - für jede `.ps1`-Datei `OK`;
 - Konfigurationsmeldung `OK: configuration and .done business rule`;
 - lokaler Verhaltenstest für `.done` und Kollisionsschutz erfolgreich;
+- lokaler Auswahltest: `.done` wird ignoriert, aktive `.xml` wird erkannt;
 - Abschluss `All PowerShell files and local behavior tests passed.`;
 - Exitcode `0`.
 
@@ -104,6 +107,45 @@ Erwartung:
 - eine vorhandene `invoice.done` wird nicht überschrieben;
 - alle temporären Testdateien werden entfernt;
 - Exitcode `0`.
+
+### T07 – Keine aktive Quelldatei
+
+Der lokale Auswahltest wird von `TEST_PACKAGE.ps1` ausgeführt und kann auch
+einzeln gestartet werden:
+
+```powershell
+.\TEST_SOURCE_SELECTION.ps1
+$LASTEXITCODE
+```
+
+Er prüft ohne SMB und SFTP, dass `.done`- und fremde Dateitypen nicht als neue
+Pagero-Dateien gelten. Für den Integrationstest muss die produktionsnahe
+Quellfreigabe erreichbar sein, aber darf keine passende `.xml` enthalten.
+
+Erwartung im Log:
+
+```text
+No matching source files found. Pattern='*.xml'; Extension='.xml'.
+Run finished. ExitCode=0
+```
+
+Erwartete Summary: `Uploaded = 0`, `Failed = 0`, `Status = NO_FILES`. Zwischen
+der Meldung zur leeren Quelle und dem Laufende darf keine Meldung `SFTP session
+... opened` stehen.
+
+### T08 – Temporärer SMB-Fehler und Wiederholung
+
+Dieser Test darf nur in einer Testumgebung oder in einem abgestimmten
+Wartungsfenster mit kontrolliertem Testpfad erfolgen. Bei einem temporär nicht
+erreichbaren SMB-Ziel müssen Warnungen wie diese erscheinen:
+
+```text
+SMB source connection attempt 1/3 failed: ... Retrying in 5 second(s).
+```
+
+Wird die Quelle bei einem späteren Versuch erreichbar, läuft der Kunde normal
+weiter. Bleibt sie nach allen Versuchen unerreichbar, endet er mit `FAILED` und
+Exitcode `1`. Das darf nicht als `NO_FILES` gewertet werden.
 
 ### T02 – Kundenliste
 
@@ -345,10 +387,12 @@ $testLock.Dispose()
 
 1. `Test-NetConnection <Host> -Port 22` muss erfolgreich sein.
 2. `-ValidateOnly` muss erfolgreich sein.
-3. Ein kontrollierter Lauf mit leerem Quellverzeichnis darf Session und
-   Remote-Verzeichnis prüfen, aber keine Datei hochladen.
+3. Eine kontrollierte Testdatei bereitstellen, die zwar zum Filter passt, aber
+   wegen des Mindestalter-Checks noch als `Skipped` gilt. Dadurch wird die
+   SFTP-Session geöffnet, ohne diese Datei hochzuladen.
 
-Erwartung: Summary mit `Uploaded = 0`, `Failed = 0`, `Status = OK`.
+Erwartung: SFTP-Session und Remote-Verzeichnis werden geprüft; Summary mit
+`Uploaded = 0`, `Skipped = 1`, `Failed = 0`, `Status = OK`.
 
 ### T31 – Fehlendes Remote-Verzeichnis
 
@@ -404,6 +448,7 @@ Erwartung:
 
 - `Uploaded = 0`;
 - `AlreadyExists = 0`;
+- Status `NO_FILES`;
 - kein zweites Remote-Dokument;
 - lokale `.done`-Datei bleibt unverändert;
 - Exitcode `0`.

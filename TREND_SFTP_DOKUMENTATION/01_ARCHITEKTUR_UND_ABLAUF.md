@@ -49,18 +49,21 @@ flowchart TD
     F -- ValidateOnly --> V[Modul und Credentials prüfen]
     F -- Produktivlauf --> G[Laufsperre öffnen]
     G --> H[Kunden nach Profil oder Filter auswählen]
-    H --> I[Je Kunde: SMB verbinden]
-    I --> J[Je Kunde: eigene SFTP-Session]
+    H --> I[Je Kunde: SMB mit Retry verbinden]
+    I --> Q{Passende Quelldateien?}
+    Q -- Nein --> O[NO_FILES und Exitcode 0]
+    Q -- Ja --> J[Je Kunde: eigene SFTP-Session]
     J --> K[Dateien verarbeiten]
     K --> M[Session und Laufwerk schließen]
+    O --> M
     M --> N[Zusammenfassung und Exitcode]
 
     classDef control fill:#dbeafe,stroke:#2563eb,color:#172554;
     classDef ok fill:#dcfce7,stroke:#16a34a,color:#14532d;
     classDef decision fill:#fef3c7,stroke:#d97706,color:#78350f;
     classDef error fill:#fee2e2,stroke:#dc2626,color:#7f1d1d;
-    class A,B,C,D,G,H,I,J,K,M,N,L,V control;
-    class E,F decision;
+    class A,B,C,D,G,H,I,J,K,M,N,L,V,O control;
+    class E,F,Q decision;
     class X error;
 ```
 
@@ -166,7 +169,21 @@ SFTP-Session aufgebaut. Der `finally`-Block versucht beide Ressourcen auch bei
 einem Fehler zu schließen. Dadurch kann die Session eines vorherigen Kunden
 nicht versehentlich für den nächsten Kunden verwendet werden.
 
-### 7.3 Dateibereitschaft
+Der SMB-Verbindungsaufbau wird bei temporären Windows-/Serverfehlern
+standardmäßig dreimal versucht. Anzahl und Wartezeit werden zentral über
+`SourceConnectionRetryCount` und `SourceConnectionRetryDelaySeconds` gesteuert.
+Bleibt die Freigabe unerreichbar, ist das weiterhin ein Fehler: Ein unerreichbarer
+Ordner ist nicht gleichbedeutend mit einem erreichbaren Ordner ohne neue Dateien.
+
+### 7.3 Leere Quelle
+
+Nach erfolgreicher SMB-Verbindung wird zuerst nach passenden aktiven Dateien
+gesucht. Werden keine Dateien mit dem konfigurierten Muster und der Erweiterung
+gefunden, endet der Kunde mit `Status = NO_FILES`, `Failed = 0` und Exitcode `0`.
+Eine SFTP-Session wird dann nicht geöffnet. Bereits auf `.done` umbenannte Dateien
+gehören nicht mehr zur aktiven Auswahl.
+
+### 7.4 Dateibereitschaft
 
 Eine Datei wird nur verarbeitet, wenn:
 
@@ -176,13 +193,13 @@ Eine Datei wird nur verarbeitet, wenn:
 
 Zu junge oder gesperrte Dateien zählen als `Skipped`, nicht als Fehler.
 
-### 7.4 XML-Sicherheit
+### 7.5 XML-Sicherheit
 
 Beim Pagero-Parsing sind DTD-Verarbeitung und externer XML-Resolver deaktiviert.
 Damit werden externe Entitäten nicht aufgelöst. Fehlerhaftes XML, ein fehlender
 Verkäufername oder ein unbekanntes Mapping führen zu einem Dateifehler.
 
-### 7.5 Cleanup
+### 7.6 Cleanup
 
 Der Ablauf verwendet zwei Ebenen von `finally`:
 
@@ -197,7 +214,7 @@ Der Ablauf verwendet zwei Ebenen von `finally`:
 | `AlreadyExists` | Pagero-Zielname existierte bereits; Upload wurde ausgelassen |
 | `Skipped` | Datei zu neu oder exklusiv gesperrt |
 | `Failed` | Fehler bei einer Datei oder auf Kundenebene |
-| `Status` | `OK`, wenn `Failed = 0`; sonst `FAILED` |
+| `Status` | `NO_FILES` ohne aktive Datei, sonst `OK` bei `Failed = 0`, andernfalls `FAILED` |
 
 Ein erfolgreicher Remote-Transfer mit anschließend fehlgeschlagener lokaler
 `.done`-Umbenennung kann gleichzeitig `Uploaded = 1` und `Failed = 1` ergeben.
@@ -208,6 +225,6 @@ liegt und beim nächsten Lauf erneut geprüft werden muss.
 
 | Exitcode | Technische Bedeutung | Scheduler-Bewertung |
 | --- | --- | --- |
-| `0` | Lauf erfolgreich; `Skipped` oder `AlreadyExists` sind möglich | Erfolg |
+| `0` | Lauf erfolgreich; `NO_FILES`, `Skipped` oder `AlreadyExists` sind möglich | Erfolg |
 | `1` | mindestens ein Kunden- oder Dateifehler; dazu können Credential- oder Verbindungsfehler während eines produktiven Kundenlaufs gehören | fachlich/technisch fehlgeschlagen |
 | `2` | Initialisierung, Konfiguration, Modul, Sperre oder Credential-Prüfung bei `-ValidateOnly` fehlgeschlagen | Lauf konnte nicht ordnungsgemäß beginnen |

@@ -35,7 +35,30 @@
         throw "New-SFTPSession returned no session for '$($CustomerConfig.Host)'."
     }
 
+    Write-TransferLog `
+        -Customer $CustomerConfig.CustomerId `
+        -Message "SFTP session $($session.SessionId) opened for '$($CustomerConfig.Host):$($CustomerConfig.Port)'."
+
     return $session
+}
+
+function Get-SourceTransferFiles {
+    param (
+        [Parameter(Mandatory = $true)]
+        [object]$CustomerConfig,
+
+        [Parameter(Mandatory = $true)]
+        [string]$SourceRoot
+    )
+
+    return @(
+        Get-ChildItem -LiteralPath $SourceRoot -File -ErrorAction Stop |
+            Where-Object {
+                $_.Name -like $CustomerConfig.FilePattern -and
+                $_.Extension -ieq $CustomerConfig.FileExtension
+            } |
+            Sort-Object Name
+    )
 }
 
 function Close-ManagedSftpSession {
@@ -140,28 +163,19 @@ function Invoke-SftpCustomerTransfer {
         [object]$CustomerConfig,
 
         [Parameter(Mandatory = $true)]
-        [string]$SourceRoot
+        [System.IO.FileInfo[]]$Files
     )
 
     if (-not (Test-SftpRemotePath -Session $Session -Path $CustomerConfig.RemoteDirectory)) {
         throw "Remote directory '$($CustomerConfig.RemoteDirectory)' does not exist on '$($CustomerConfig.Host)'."
     }
 
-    $files = @(
-        Get-ChildItem -LiteralPath $SourceRoot -File -ErrorAction Stop |
-            Where-Object {
-                $_.Name -like $CustomerConfig.FilePattern -and
-                $_.Extension -ieq $CustomerConfig.FileExtension
-            } |
-            Sort-Object Name
-    )
-
     $uploaded = 0
     $alreadyExists = 0
     $skipped = 0
     $failed = 0
 
-    foreach ($file in $files) {
+    foreach ($file in @($Files)) {
         if (-not (Test-LocalFileReady `
             -File $file `
             -MinimumAgeSeconds ([int]$CustomerConfig.MinimumFileAgeSeconds))) {

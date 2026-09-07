@@ -90,3 +90,376 @@
 2026-09-03 14:39:43.979 [INFO] [PAGERO] Renamed processed local source file '2026600210.xml' to '2026600210.done'.
 2026-09-03 14:39:44.010 [INFO] [PAGERO] SFTP session 10 closed.
 2026-09-03 14:39:44.026 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 15:05:36.697 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 15:05:36.713 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 15:05:37.667 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-03 15:05:37.698 [INFO] [-] Run finished. ExitCode=0
+2026-09-03 16:05:36.682 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 16:05:36.713 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 16:05:37.026 [ERROR] [PAGERO] An internal error occurred
+2026-09-03 16:05:37.041 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 17:05:36.670 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 17:05:36.686 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 17:05:37.046 [ERROR] [PAGERO] An internal error occurred
+2026-09-03 17:05:37.046 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 18:05:36.634 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 18:05:36.650 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 18:05:36.915 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-03 18:05:36.928 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 19:05:36.705 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 19:05:36.721 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 19:05:37.049 [ERROR] [PAGERO] An internal error occurred
+2026-09-03 19:05:37.049 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 20:05:36.666 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 20:05:36.682 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 20:05:36.994 [ERROR] [PAGERO] An internal error occurred
+2026-09-03 20:05:37.010 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 21:05:36.673 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 21:05:36.689 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 21:05:36.986 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-03 21:05:37.001 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 22:05:36.691 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 22:05:36.707 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 22:05:36.973 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-03 22:05:36.988 [INFO] [-] Run finished. ExitCode=1
+2026-09-03 23:05:36.569 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 23:05:36.588 [INFO] [PAGERO] Customer transfer started.
+2026-09-03 23:05:36.866 [ERROR] [PAGERO] An internal error occurred
+2026-09-03 23:05:36.866 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 00:05:36.848 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 00:05:36.864 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 00:05:37.145 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 00:05:37.164 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 01:05:44.180 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 01:05:45.556 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 01:05:55.445 [INFO] [PAGERO] Uploaded '2026600211.xml' as 'DE13-Invoice-2026600211-20260903141938342.xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
+2026-09-04 01:05:56.384 [INFO] [PAGERO] Renamed processed local source file '2026600211.xml' to '2026600211.done'.
+2026-09-04 01:05:56.556 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-04 01:05:56.812 [INFO] [-] Run finished. ExitCode=0
+2026-09-04 02:05:36.675 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 02:05:36.691 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 02:05:36.941 [ERROR] [PAGERO] An internal error occurred
+2026-09-04 02:05:36.957 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 03:05:36.597 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 03:05:36.613 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 03:05:36.879 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 03:05:36.879 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 04:05:36.665 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 04:05:36.681 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 04:05:36.916 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 04:05:36.931 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 05:05:36.923 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 05:05:36.938 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 05:05:37.221 [ERROR] [PAGERO] An internal error occurred
+2026-09-04 05:05:37.237 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 06:05:36.998 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 06:05:37.013 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 06:05:37.249 [ERROR] [PAGERO] An internal error occurred
+2026-09-04 06:05:37.265 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 07:05:36.626 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 07:05:36.642 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 07:05:36.892 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 07:05:36.892 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 08:05:36.850 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 08:05:36.866 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 08:05:37.913 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-04 08:05:37.944 [INFO] [-] Run finished. ExitCode=0
+2026-09-04 09:05:36.646 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 09:05:36.662 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 09:05:36.959 [ERROR] [PAGERO] An internal error occurred
+2026-09-04 09:05:36.975 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 10:05:36.909 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 10:05:36.922 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 10:05:36.937 [ERROR] [-] Fatal error: Another transfer run is already active. Lock file: 'D:\TREND_SFTP\Log\transfer.lock'.
+2026-09-04 10:05:37.702 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-04 10:05:37.718 [INFO] [-] Run finished. ExitCode=0
+2026-09-04 11:05:37.395 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 11:05:37.410 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 11:05:37.692 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 11:05:37.707 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 12:05:37.353 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 12:05:37.368 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 12:05:38.150 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-04 12:05:38.165 [INFO] [-] Run finished. ExitCode=0
+2026-09-04 13:05:37.355 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 13:05:37.371 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 13:05:37.637 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 13:05:37.653 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 14:05:37.444 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 14:05:37.460 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 14:05:37.742 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 14:05:37.757 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 15:05:37.327 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 15:05:37.342 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 15:05:37.624 [ERROR] [PAGERO] An internal error occurred
+2026-09-04 15:05:37.639 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 16:05:37.369 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 16:05:37.385 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 16:05:37.651 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 16:05:37.666 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 17:05:37.337 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 17:05:37.354 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 17:05:37.620 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 17:05:37.635 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 18:05:37.384 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 18:05:37.400 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 18:05:38.402 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-04 18:05:38.449 [INFO] [-] Run finished. ExitCode=0
+2026-09-04 19:05:37.464 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 19:05:37.479 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 19:05:37.839 [ERROR] [PAGERO] An internal error occurred
+2026-09-04 19:05:37.855 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 20:05:37.389 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 20:05:37.404 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 20:05:38.421 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-04 20:05:38.437 [INFO] [-] Run finished. ExitCode=0
+2026-09-04 21:05:37.423 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 21:05:37.439 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 21:05:38.472 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-04 21:05:38.503 [INFO] [-] Run finished. ExitCode=0
+2026-09-04 22:05:37.381 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 22:05:37.402 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 22:05:37.679 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-04 22:05:37.679 [INFO] [-] Run finished. ExitCode=1
+2026-09-04 23:05:37.421 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-04 23:05:37.437 [INFO] [PAGERO] Customer transfer started.
+2026-09-04 23:05:38.580 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-04 23:05:38.611 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 00:05:37.528 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 00:05:37.543 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 00:05:37.809 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 00:05:37.825 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 01:05:44.337 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 01:05:44.666 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 01:05:49.407 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-05 01:05:51.363 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 02:05:37.311 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 02:05:37.342 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 02:05:37.579 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 02:05:37.579 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 03:05:37.423 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 03:05:37.455 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 03:05:37.674 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 03:05:37.674 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 04:05:37.484 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 04:05:37.500 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 04:05:37.766 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 04:05:37.781 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 05:05:37.618 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 05:05:37.650 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 05:05:37.962 [ERROR] [PAGERO] An internal error occurred
+2026-09-05 05:05:37.978 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 06:05:37.452 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 06:05:37.468 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 06:05:38.454 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-05 06:05:38.487 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 07:05:37.366 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 07:05:37.382 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 07:05:37.664 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 07:05:37.680 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 08:05:37.452 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 08:05:37.483 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 08:05:37.813 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 08:05:37.828 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 09:05:37.424 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 09:05:37.439 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 09:05:38.864 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-05 09:05:38.896 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 10:05:36.933 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 10:05:36.949 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 10:05:36.980 [ERROR] [-] Fatal error: Another transfer run is already active. Lock file: 'D:\TREND_SFTP\Log\transfer.lock'.
+2026-09-05 10:05:38.059 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-05 10:05:38.091 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 11:05:37.379 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 11:05:37.395 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 11:05:37.771 [ERROR] [PAGERO] An internal error occurred
+2026-09-05 11:05:37.787 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 12:05:37.389 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 12:05:37.404 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 12:05:37.747 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 12:05:37.749 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 13:05:37.481 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 13:05:37.497 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 13:05:38.922 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-05 13:05:38.953 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 14:05:37.357 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 14:05:37.372 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 14:05:37.608 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 14:05:37.624 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 15:05:37.441 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 15:05:37.456 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 15:05:38.536 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-05 15:05:38.570 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 16:05:37.341 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 16:05:37.356 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 16:05:37.607 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 16:05:37.622 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 17:05:37.384 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 17:05:37.399 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 17:05:37.730 [ERROR] [PAGERO] An internal error occurred
+2026-09-05 17:05:37.745 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 18:05:37.448 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 18:05:37.463 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 18:05:38.575 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-05 18:05:38.606 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 19:05:37.391 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 19:05:37.407 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 19:05:37.658 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 19:05:37.674 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 20:05:37.397 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 20:05:37.413 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 20:05:37.695 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 20:05:37.711 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 21:05:37.462 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 21:05:37.477 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 21:05:38.494 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-05 21:05:38.526 [INFO] [-] Run finished. ExitCode=0
+2026-09-05 22:05:37.410 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 22:05:37.425 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 22:05:37.693 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 22:05:37.693 [INFO] [-] Run finished. ExitCode=1
+2026-09-05 23:05:37.468 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-05 23:05:37.475 [INFO] [PAGERO] Customer transfer started.
+2026-09-05 23:05:37.773 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-05 23:05:37.788 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 00:05:43.303 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 00:05:45.119 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 00:05:49.078 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 00:05:54.901 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 02:05:36.893 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 02:05:37.003 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 02:05:38.131 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 02:05:38.163 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 03:05:36.651 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 03:05:36.667 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 03:05:36.964 [ERROR] [PAGERO] An internal error occurred
+2026-09-06 03:05:36.980 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 04:05:36.667 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 04:05:36.682 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 04:05:37.746 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 04:05:37.777 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 05:05:37.095 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 05:05:37.110 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 05:05:37.360 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-06 05:05:37.360 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 06:05:36.777 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 06:05:36.793 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 06:05:37.904 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 06:05:37.935 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 07:05:36.608 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 07:05:36.630 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 07:05:37.734 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 07:05:37.750 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 08:05:36.665 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 08:05:36.681 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 08:05:36.962 [ERROR] [PAGERO] An internal error occurred
+2026-09-06 08:05:36.962 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 09:05:37.161 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 09:05:37.177 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 09:05:38.663 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 09:05:38.694 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 10:05:36.687 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 10:05:36.703 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 10:05:36.734 [ERROR] [-] Fatal error: Another transfer run is already active. Lock file: 'D:\TREND_SFTP\Log\transfer.lock'.
+2026-09-06 10:05:37.720 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 10:05:37.736 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 11:05:36.640 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 11:05:36.655 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 11:05:36.921 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-06 11:05:36.921 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 12:05:36.654 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 12:05:36.670 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 12:05:37.734 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 12:05:37.750 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 13:05:36.627 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 13:05:36.643 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 13:05:36.893 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-06 13:05:36.909 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 14:05:37.191 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 14:05:37.207 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 14:05:38.286 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 14:05:38.317 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 15:05:37.119 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 15:05:37.135 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 15:05:38.293 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 15:05:38.325 [INFO] [-] Run finished. ExitCode=0
+2026-09-06 16:05:37.166 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 16:05:37.181 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 16:05:37.463 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-06 16:05:37.478 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 17:05:37.053 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 17:05:37.069 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 17:05:37.351 [ERROR] [PAGERO] An internal error occurred
+2026-09-06 17:05:37.351 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 18:05:37.108 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 18:05:37.124 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 18:05:37.437 [ERROR] [PAGERO] An internal error occurred
+2026-09-06 18:05:37.453 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 19:05:37.125 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 19:05:37.141 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 19:05:37.408 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-06 19:05:37.423 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 20:05:37.105 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 20:05:37.120 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 20:05:37.496 [ERROR] [PAGERO] An internal error occurred
+2026-09-06 20:05:37.496 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 21:05:37.079 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 21:05:37.110 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 21:05:37.424 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-06 21:05:37.439 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 22:05:37.084 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 22:05:37.115 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 22:05:37.459 [ERROR] [PAGERO] An internal error occurred
+2026-09-06 22:05:37.469 [INFO] [-] Run finished. ExitCode=1
+2026-09-06 23:05:37.094 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-06 23:05:37.109 [INFO] [PAGERO] Customer transfer started.
+2026-09-06 23:05:38.237 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-06 23:05:38.252 [INFO] [-] Run finished. ExitCode=0
+2026-09-07 00:05:37.241 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 00:05:37.257 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 00:05:37.538 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-07 00:05:37.554 [INFO] [-] Run finished. ExitCode=1
+2026-09-07 01:05:37.284 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 01:05:37.300 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 01:05:37.613 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-07 01:05:37.629 [INFO] [-] Run finished. ExitCode=1
+2026-09-07 02:05:37.267 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 02:05:37.283 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 02:05:38.315 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-07 02:05:38.347 [INFO] [-] Run finished. ExitCode=0
+2026-09-07 03:05:37.153 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 03:05:37.168 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 03:05:37.544 [ERROR] [PAGERO] An internal error occurred
+2026-09-07 03:05:37.560 [INFO] [-] Run finished. ExitCode=1
+2026-09-07 04:05:37.275 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 04:05:37.290 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 04:05:38.259 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-07 04:05:38.288 [INFO] [-] Run finished. ExitCode=0
+2026-09-07 05:05:37.270 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 05:05:37.285 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 05:05:37.583 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-07 05:05:37.599 [INFO] [-] Run finished. ExitCode=1
+2026-09-07 06:05:37.115 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 06:05:37.131 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 06:05:37.351 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-07 06:05:37.366 [INFO] [-] Run finished. ExitCode=1
+2026-09-07 07:05:37.206 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 07:05:37.222 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 07:05:37.520 [ERROR] [PAGERO] The specified server cannot perform the requested operation
+2026-09-07 07:05:37.520 [INFO] [-] Run finished. ExitCode=1
+2026-09-07 08:05:37.082 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 08:05:37.097 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 08:05:38.224 [INFO] [PAGERO] SFTP session 0 closed.
+2026-09-07 08:05:38.255 [INFO] [-] Run finished. ExitCode=0
+2026-09-07 09:05:36.756 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 09:05:36.787 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 09:05:36.787 [INFO] [PAGERO] Opening SMB source '\\S105DD7A.dometic.internal\TREND\echt\e-Rechnungen'.
+2026-09-07 09:05:37.240 [INFO] [PAGERO] SMB source connected on attempt {1/3}: '\\S105DD7A.dometic.internal\TREND\echt\e-Rechnungen'.
+2026-09-07 09:05:37.772 [INFO] [PAGERO] No matching source files found. Pattern='*.xml'; Extension='.xml'.
+2026-09-07 09:05:37.803 [INFO] [-] Run finished. ExitCode=0
+2026-09-07 09:06:10.139 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-07 09:06:10.171 [INFO] [PAGERO] Customer transfer started.
+2026-09-07 09:06:10.186 [INFO] [PAGERO] Opening SMB source '\\S105DD7A.dometic.internal\TREND\echt\e-Rechnungen'.
+2026-09-07 09:06:10.506 [INFO] [PAGERO] SMB source connected on attempt {1/3}: '\\S105DD7A.dometic.internal\TREND\echt\e-Rechnungen'.
+2026-09-07 09:06:10.834 [INFO] [PAGERO] No matching source files found. Pattern='*.xml'; Extension='.xml'.
+2026-09-07 09:06:10.850 [INFO] [-] Run finished. ExitCode=0

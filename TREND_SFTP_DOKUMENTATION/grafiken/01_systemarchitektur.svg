@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000" role="img" aria-labelledby="title desc">
   <title id="title">Systemarchitektur des vereinheitlichten TREND-SFTP-Transfers</title>
-  <desc id="desc">Windows Task Scheduler startet MAIN.ps1 stündlich für Pagero oder täglich für drei Standardkunden. Die Main-Datei verwendet zentrale Konfiguration, Logging und Sperre, liest je Kunde eine SMB-Quelle und schreibt in ein eigenes SFTP-Ziel.</desc>
+  <desc id="desc">Windows Task Scheduler startet MAIN.ps1 stündlich für Pagero oder täglich für drei Standardkunden. Die Main-Datei verwendet zentrale Konfiguration, Logging und Sperre, verbindet die SMB-Quelle mit Wiederholungen und öffnet SFTP nur bei vorhandenen aktiven Dateien.</desc>
   <defs>
     <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
       <path d="M0,0 L12,6 L0,12 z" fill="#2563eb"/>
@@ -111,5 +111,5 @@
   <text class="head" x="1048" y="902" text-anchor="middle">SFTP Standardziele</text>
   <text class="label-green" x="1048" y="929" text-anchor="middle">/ · /StockData_EU · /pricelistimport</text>
 
-  <text class="small" x="700" y="982" text-anchor="middle">Jeder Kundenlauf: SMB verbinden → SFTP verarbeiten → Quelle auf .done umbenennen → SFTP und PSDrive schließen</text>
+  <text class="small" x="700" y="975" text-anchor="middle">SMB mit Retry → aktive Dateien suchen → keine Datei: NO_FILES / Exit 0 → sonst SFTP und .done</text>
 </svg>

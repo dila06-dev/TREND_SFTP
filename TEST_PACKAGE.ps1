@@ -41,10 +41,7 @@ try {
     Write-Host 'OK: configuration and .done business rule' -ForegroundColor Green
 
     & (Join-Path $PSScriptRoot 'TEST_AFTER_COPY.ps1')
-
-    if ($LASTEXITCODE -ne 0) {
-        throw "TEST_AFTER_COPY.ps1 returned exit code $LASTEXITCODE."
-    }
+    & (Join-Path $PSScriptRoot 'TEST_SOURCE_SELECTION.ps1')
 }
 catch {
     Write-Host "ERROR: package behavior validation failed: $($_.Exception.Message)" -ForegroundColor Red

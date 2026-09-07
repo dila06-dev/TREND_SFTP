@@ -42,6 +42,12 @@ als erfolgreich abgearbeitet; auch dann wird die lokale XML-Datei auf `.done`
 umbenannt. Existiert die lokale `.done`-Datei bereits, wird sie nicht
 überschrieben und der Kundenlauf meldet einen Fehler.
 
+Sind keine Dateien vorhanden, die zum aktiven Muster und zur aktiven Erweiterung
+passen, ist das ein normaler Leerlauf: `Status = NO_FILES`, `Failed = 0` und
+Exitcode `0`. In diesem Fall wird keine SFTP-Session geöffnet. Ist dagegen die
+SMB-Quellfreigabe selbst nicht erreichbar, versucht das Paket den Zugriff
+standardmäßig dreimal und meldet erst danach einen echten Fehler.
+
 ## Installation
 
 1. Die bisherigen Skripte aus `D:\TREND_SFTP` sichern.
@@ -54,6 +60,7 @@ umbenannt. Existiert die lokale `.done`-Datei bereits, wird sie nicht
 ```powershell
 powershell.exe -NoProfile -File "D:\TREND_SFTP\TEST_PACKAGE.ps1"
 powershell.exe -NoProfile -File "D:\TREND_SFTP\TEST_AFTER_COPY.ps1"
+powershell.exe -NoProfile -File "D:\TREND_SFTP\TEST_SOURCE_SELECTION.ps1"
 powershell.exe -NoProfile -File "D:\TREND_SFTP\MAIN.ps1" -RunProfile HOURLY -ValidateOnly
 powershell.exe -NoProfile -File "D:\TREND_SFTP\MAIN.ps1" -RunProfile DAILY -ValidateOnly
 ```
@@ -116,6 +123,12 @@ powershell.exe -NoProfile -File "D:\TREND_SFTP\TEST_PAGERO_XML.ps1" -XmlPath "D:
 - Die Konfiguration wird als neues Objekt geladen; alte globale Parameter können
   nicht wiederverwendet werden.
 - Jeder Kunde erhält einen eigenen Lauf für Netzlaufwerk und SFTP-Session.
+- Temporäre SMB-Fehler werden gemäß `SourceConnectionRetryCount` automatisch
+  wiederholt; zwischen den Versuchen gilt `SourceConnectionRetryDelaySeconds`.
+- Kundenfehler enthalten eine Phase wie `Stage=SMB_CONNECT`, `SOURCE_SCAN`,
+  `SFTP_CONNECT` oder `TRANSFER` und lassen sich dadurch eindeutig zuordnen.
+- Ein erreichbarer, aber leerer Quellordner endet mit `NO_FILES` und Exitcode `0`.
+- Bei `NO_FILES` wird keine unnötige SFTP-Session aufgebaut.
 - Eine fehlgeschlagene Verbindung kann niemals auf die Session des vorherigen
   Kunden zurückfallen.
 - Das SFTP-Zielverzeichnis wird vor dem Upload geprüft.
@@ -134,7 +147,7 @@ powershell.exe -NoProfile -File "D:\TREND_SFTP\TEST_PAGERO_XML.ps1" -XmlPath "D:
 
 | Code | Bedeutung |
 | --- | --- |
-| 0 | Lauf erfolgreich |
+| 0 | Lauf erfolgreich; dazu gehört auch `NO_FILES` bei erreichbarer Quelle |
 | 1 | Mindestens ein Kunde oder eine Datei ist fehlgeschlagen |
 | 2 | Konfigurations-, Abhängigkeits-, Credential- oder Sperrfehler |
 
@@ -144,4 +157,3 @@ Der beobachtete Galaxus-Hostkey-Konflikt muss durch Digitec Galaxus bestätigt
 werden, bevor der gespeicherte Trusted-Host-Eintrag geändert wird. Der Pfad
 `/StockData_EU` darf erst nach erfolgreichem Aufbau einer echten Galaxus-Session
 erneut bewertet werden.
-"# TREND_SFTP" 

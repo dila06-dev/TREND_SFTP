@@ -22,6 +22,10 @@ einem späteren Lauf erneut geprüft werden. Bei Pagero gilt ein bereits
 vorhandenes endgültiges Remote-Ziel (`AlreadyExists`) als abgearbeitet und löst
 ebenfalls die lokale `.done`-Umbenennung aus.
 
+Ein erreichbares Quellverzeichnis ohne passende neue Datei ist ausdrücklich
+erfolgreich: `Status = NO_FILES`, `Failed = 0`, Exitcode `0`. Das Skript öffnet
+in diesem Fall keine SFTP-Session.
+
 ## 2. Parameter von MAIN.ps1
 
 | Parameter | Typ | Standard | Wirkung |
@@ -235,8 +239,16 @@ Beispiele:
 
 ```text
 2026-09-03 09:00:00.123 [INFO] [-] Run started. Profile=HOURLY; Customer=; Selected=PAGERO
+2026-09-03 09:00:00.500 [INFO] [PAGERO] SMB source connected on attempt 1/3: '...'.
 2026-09-03 09:00:02.456 [INFO] [PAGERO] Uploaded '2026600172.xml' as 'DE13-Invoice-2026600172-...xml'; Seller='Dometic Benelux B.V.'; Entity='DE13'.
 2026-09-03 09:00:03.000 [INFO] [-] Run finished. ExitCode=0
+```
+
+Normaler Lauf ohne neue Daten:
+
+```text
+2026-09-07 08:05:37.500 [INFO] [PAGERO] No matching source files found. Pattern='*.xml'; Extension='.xml'.
+2026-09-07 08:05:37.520 [INFO] [-] Run finished. ExitCode=0
 ```
 
 Die Abschlussübersicht enthält je Kunde `Uploaded`, `AlreadyExists`, `Skipped`,
@@ -246,7 +258,7 @@ Die Abschlussübersicht enthält je Kunde `Uploaded`, `AlreadyExists`, `Skipped`
 
 | Code | Bedeutung | Empfohlene Reaktion |
 | --- | --- | --- |
-| `0` | vollständig verarbeitet oder nur erwartete Skips/Dubletten | keine Alarmierung |
+| `0` | vollständig verarbeitet, `NO_FILES` oder nur erwartete Skips/Dubletten | keine Alarmierung |
 | `1` | mindestens eine Datei oder ein Kunde fehlgeschlagen; im Produktivlauf auch bei kundenspezifischem Credential-/Verbindungsfehler | Log prüfen, Ticket/Alarm |
 | `2` | Lauf konnte wegen Initialisierung, Konfiguration, Modul, Lock oder fehlgeschlagener Credential-Prüfung bei `-ValidateOnly` nicht beginnen | sofort prüfen; Scheduler-/Deploymentfehler möglich |
 

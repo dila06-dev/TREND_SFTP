@@ -11,7 +11,7 @@
 - erwarteter Kunde: PAGERO
 - Verarbeitung: XML lesen, Entity ermitteln, Upload nach `/in`, remote umbenennen
 - lokale Nachbearbeitung: `.xml` → `.done`
-- normaler Exitcode: `0`
+- normaler Exitcode: `0`, auch bei `Status = NO_FILES`
 
 ### Täglicher Standardlauf
 
@@ -29,6 +29,8 @@
 - [ ] `transfer.log` enthält `Run finished. ExitCode=0`
 - [ ] keine neuen `[ERROR]`-Zeilen
 - [ ] `Uploaded`, `AlreadyExists` und `Skipped` sind fachlich plausibel
+- [ ] `NO_FILES` ist bei tatsächlich leerer, aber erreichbarer Quelle plausibel
+- [ ] keine wiederholten SMB-Warnungen oder nicht erreichbaren Quellpfade
 - [ ] erfolgreich verarbeitete Quelldateien tragen die Erweiterung `.done`
 - [ ] keine Fehler wegen bereits vorhandener `.done`-Zieldateien
 - [ ] bei Pagero keine unerwarteten Verkäufer-Mappingfehler
@@ -38,7 +40,7 @@ Prüfbefehle:
 
 ```powershell
 Get-ScheduledTask |
-    Where-Object TaskName -like 'TREND_TO*' |
+    Where-Object TaskName -like 'TREND SFTP*' |
     ForEach-Object {
         $info = $_ | Get-ScheduledTaskInfo
         [PSCustomObject]@{
@@ -198,6 +200,7 @@ Task läuft.
 - [ ] Exitcode erfasst
 - [ ] Konsolenausgabe/Task-History gesichert
 - [ ] relevante Logzeilen gesichert
+- [ ] Zustand unterschieden: `NO_FILES` oder SMB-Quelle nicht erreichbar
 - [ ] betroffener Kunde identifiziert
 - [ ] andere Kunden auf Weiterverarbeitung geprüft
 - [ ] lokaler Zustand geprüft: aktive `.xml`/`.csv`, erwartete `.done`-Datei und mögliche Kollision

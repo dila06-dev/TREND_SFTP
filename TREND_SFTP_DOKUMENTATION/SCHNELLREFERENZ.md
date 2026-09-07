@@ -31,6 +31,9 @@ Set-Location 'D:\TREND_SFTP'
 # Lokaler Test der .done-Umbenennung ohne SFTP
 .\TEST_AFTER_COPY.ps1
 
+# Lokaler Test der Quelldateiauswahl (inklusive leer/.done)
+.\TEST_SOURCE_SELECTION.ps1
+
 # Rückgabecode und Log
 $LASTEXITCODE
 Get-Content '.\Log\transfer.log' -Tail 100
@@ -53,6 +56,10 @@ Export.csv     -> Export.done
 
 Ein vorhandenes `.done`-Ziel wird nicht überschrieben.
 
+Keine passende aktive Datei ist kein Fehler: `Status = NO_FILES`, Exitcode `0`.
+Kann die SMB-Quelle nach den konfigurierten Wiederholungen nicht verbunden
+werden, bleibt dies dagegen ein Fehler mit Exitcode `1`.
+
 ## Pagero-Regel
 
 ```text
@@ -66,7 +73,7 @@ Ziel:                  /in/DE13-Invoice-2026600172-<yyyyMMddHHmmssfff>.xml
 
 | Code | Bedeutung |
 | --- | --- |
-| `0` | erfolgreich |
+| `0` | erfolgreich, einschließlich `NO_FILES` |
 | `1` | Kunden- oder Dateifehler; im Produktivlauf auch kundenspezifische Credential-/Verbindungsfehler |
 | `2` | Initialisierung, Konfiguration, Modul, Lock oder fehlgeschlagenes Credential bei `-ValidateOnly` |
 

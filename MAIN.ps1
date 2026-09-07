@@ -108,27 +108,65 @@ try {
     foreach ($customerConfig in $selectedCustomers) {
         $sourceDriveMounted = $false
         $sftpSession = $null
+        $customerStage = 'INITIALIZE'
 
         Write-Host "`n[$($customerConfig.CustomerId)] Start transfer" -ForegroundColor Cyan
         Write-TransferLog -Customer $customerConfig.CustomerId -Message 'Customer transfer started.'
 
         try {
+            $customerStage = 'SMB_CONNECT'
+            Write-TransferLog `
+                -Customer $customerConfig.CustomerId `
+                -Message "Opening SMB source '$($customerConfig.SourcePath)'."
+
             $sourceRoot = Mount-SourcePath `
                 -DriveName $configuration.General.SourceDriveName `
                 -SourcePath $customerConfig.SourcePath `
                 -NetworkUsername $configuration.General.NetworkUsername `
-                -NetworkCredentialFile $configuration.General.NetworkCredentialFile
+                -NetworkCredentialFile $configuration.General.NetworkCredentialFile `
+                -CustomerId $customerConfig.CustomerId `
+                -RetryCount ([int]$configuration.General.SourceConnectionRetryCount) `
+                -RetryDelaySeconds ([int]$configuration.General.SourceConnectionRetryDelaySeconds)
 
             $sourceDriveMounted = $true
+            $customerStage = 'SOURCE_SCAN'
+
+            $sourceFiles = @(Get-SourceTransferFiles `
+                -CustomerConfig $customerConfig `
+                -SourceRoot $sourceRoot)
+
+            if ($sourceFiles.Count -eq 0) {
+                $customerStage = 'NO_FILES'
+                $message = "No matching source files found. Pattern='$($customerConfig.FilePattern)'; Extension='$($customerConfig.FileExtension)'."
+                Write-Host "[$($customerConfig.CustomerId)] $message" -ForegroundColor DarkGray
+                Write-TransferLog -Customer $customerConfig.CustomerId -Message $message
+
+                $summaries += [PSCustomObject]@{
+                    CustomerId    = $customerConfig.CustomerId
+                    Uploaded      = 0
+                    AlreadyExists = 0
+                    Skipped       = 0
+                    Failed        = 0
+                    Status        = 'NO_FILES'
+                }
+
+                continue
+            }
+
+            $customerStage = 'SFTP_CONNECT'
+            Write-TransferLog `
+                -Customer $customerConfig.CustomerId `
+                -Message "Found $($sourceFiles.Count) matching source file(s). Opening SFTP session."
 
             $sftpSession = Open-ManagedSftpSession `
                 -CustomerConfig $customerConfig `
                 -GeneralConfig $configuration.General
 
+            $customerStage = 'TRANSFER'
             $summary = Invoke-SftpCustomerTransfer `
                 -Session $sftpSession `
                 -CustomerConfig $customerConfig `
-                -SourceRoot $sourceRoot
+                -Files $sourceFiles
 
             $summaries += $summary
 
@@ -138,7 +176,7 @@ try {
         }
         catch {
             $exitCode = 1
-            $message = $_.Exception.Message
+            $message = "Stage=$customerStage; $($_.Exception.Message)"
 
             Write-Host "[$($customerConfig.CustomerId)] ERROR: $message" -ForegroundColor Red
             Write-TransferLog -Level 'ERROR' -Customer $customerConfig.CustomerId -Message $message

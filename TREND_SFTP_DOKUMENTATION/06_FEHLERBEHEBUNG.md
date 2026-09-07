@@ -37,6 +37,9 @@ Get-Content '.\Log\transfer.log' -Tail 100
 | `Key exchange negotiation failed` | keine gemeinsame SSH-Algorithmus-Auswahl | Modulversion und Serveralgorithmen abstimmen |
 | `Fingerprint not matched` | Hostkey wurde geändert | Fingerprint extern bestätigen, dann kontrolliert aktualisieren |
 | `Remote directory ... does not exist` | falscher Pfad oder fehlende Rechte | erst Session prüfen, dann Pfad/Rechte |
+| `No matching source files found` | erreichbare Quelle enthält keine aktive Datei | normaler `NO_FILES`-Lauf, keine Maßnahme |
+| `The specified server cannot perform the requested operation` | meist SMB-/UNC-Verbindung vor der SFTP-Session | Retry-Log und Zugriff als Scheduler-Konto prüfen |
+| `An internal error occurred` direkt nach Kundenstart | meist temporärer SMB-/PSDrive-Fehler | Stufenlog prüfen; Quelle und Windows-Netzwerk untersuchen |
 | `Mounted source path is not accessible` | UNC, DNS, SMB oder Berechtigung | Zugriff als Scheduler-Konto testen |
 | `PowerShell drive 'TREND_SRC' already exists` | fremdes/altes PSDrive im Prozess | Prozess und Laufzustand prüfen |
 | `Another transfer run is already active` | paralleler Lauf hält Lock | laufenden Task identifizieren und abwarten |
@@ -227,14 +230,54 @@ erfolgreichen Sessionerstellung.
 
 ## 7. SMB- und Quellpfadfehler
 
-### 7.1 Quellfreigabe als Scheduler-Konto prüfen
+### 7.1 Leer versus nicht erreichbar
+
+Diese beiden Zustände müssen getrennt bewertet werden:
+
+| Zustand | Erkennungsmerkmal | Status/Exitcode |
+| --- | --- | --- |
+| Quelle erreichbar, keine passende `.xml` | `SMB source connected...` und `No matching source files found...` | `NO_FILES`, Exitcode `0` |
+| Quelle nicht erreichbar | Warnungen `SMB source connection attempt ... failed`; nach letztem Versuch Fehler | `FAILED`, Exitcode `1` |
+| Quelle mit Datei erreichbar | `Found ... matching source file(s). Opening SFTP session.` | danach SFTP-/Dateiverarbeitung |
+
+`The specified server cannot perform the requested operation` und `An internal
+error occurred` sind keine zuverlässigen Meldungen für „keine Daten“. In dem
+gezeigten Zeitmuster traten sie bereits rund 0,2 bis 0,4 Sekunden nach
+`Customer transfer started` auf und es folgte keine Meldung zum Schließen einer
+SFTP-Session. Das spricht für einen Fehler beim SMB-/PSDrive-Zugriff vor dem
+SFTP-Aufbau. Die aktualisierte Version protokolliert diese Stufe ausdrücklich
+und wiederholt den SMB-Aufbau standardmäßig dreimal.
+
+Zusätzlich enthält jeder abschließende Kundenfehler eine Phase:
+
+| Phase | Fehlerbereich |
+| --- | --- |
+| `Stage=SMB_CONNECT` | Anmeldung, `New-PSDrive` oder SMB-Erreichbarkeit |
+| `Stage=SOURCE_SCAN` | Auflisten/Filtern der Quelldateien |
+| `Stage=SFTP_CONNECT` | SFTP-Session und SSH/Hostkey |
+| `Stage=TRANSFER` | Remote-Pfad, Upload, Pagero-Rename oder lokale `.done`-Aktion |
+
+Ein dauerhaft nicht erreichbarer Quellordner bleibt bewusst ein Fehler. Würde
+er wie eine leere Quelle behandelt, könnten vorhandene, aber unsichtbare
+Rechnungen unbemerkt liegen bleiben.
+
+### 7.2 Quellfreigabe als Scheduler-Konto prüfen
 
 ```powershell
 $source = '\\S105DD7A.dometic.internal\TREND\echt\e-Rechnungen'
 
 Test-Path -LiteralPath $source
 Get-ChildItem -LiteralPath $source -File |
-    Select-Object -First 10 Name, Length, LastWriteTime
+Select-Object -First 10 Name, Length, LastWriteTime
+```
+
+Zusätzlich die für den Lauf relevanten Windows-Ereignisse und die SMB-Verbindung
+prüfen:
+
+```powershell
+Resolve-DnsName S105DD7A.dometic.internal
+Test-NetConnection S105DD7A.dometic.internal -Port 445
+Get-SmbConnection | Where-Object ServerName -like 'S105DD7A*'
 ```
 
 Wenn der direkte Zugriff mit dem angemeldeten Konto funktioniert, heißt das
@@ -242,7 +285,7 @@ nicht zwingend, dass die in `trend.sec` hinterlegten SMB-Zugangsdaten gültig
 sind. `-ValidateOnly` prüft lediglich die Entschlüsselung, nicht die Anmeldung
 an der Freigabe.
 
-### 7.2 PSDrive ist bereits vorhanden
+### 7.3 PSDrive ist bereits vorhanden
 
 ```powershell
 Get-PSDrive -Name TREND_SRC -ErrorAction SilentlyContinue |

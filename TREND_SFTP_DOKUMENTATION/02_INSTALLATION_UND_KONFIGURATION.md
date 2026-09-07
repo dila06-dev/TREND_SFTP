@@ -74,6 +74,7 @@ D:\TREND_SFTP\
 ├── SftpTransfer.ps1
 ├── Utils.ps1
 ├── TEST_PACKAGE.ps1
+├── TEST_SOURCE_SELECTION.ps1
 ├── TEST_PAGERO_XML.ps1
 ├── README.md
 ├── Log\
@@ -231,6 +232,8 @@ Aktuelle Werte aus `USER_PARAM.ps1`:
 | `SourceDriveName` | `TREND_SRC` | temporäres PowerShell-Laufwerk ohne Doppelpunkt |
 | `NetworkUsername` | `Bari` | SMB-Benutzer für alle Quellfreigaben |
 | `NetworkCredentialFile` | `secure\trend.sec` | verschlüsseltes SMB-Kennwort |
+| `SourceConnectionRetryCount` | `3` | maximale SMB-Verbindungsversuche je Kunde |
+| `SourceConnectionRetryDelaySeconds` | `5` | Wartezeit zwischen SMB-Versuchen |
 | `ConnectionTimeoutSeconds` | `30` | Zeitlimit für Verbindungsaufbau |
 | `OperationTimeoutSeconds` | `120` | Zeitlimit für SFTP-Operationen |
 | `KeepAliveSeconds` | `15` | Keepalive-Intervall der SFTP-Session |
